@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({    /* Rules (datatypes and fields) to b
         type: String,
         required: true,     /* Two passwords can be the same  */
     },
-},  {timestamp: true}  /* For storing time of creation and update  */
+},  {timestamps: true}  /* For storing time of creation and update  */
 );
 
 /* Model */

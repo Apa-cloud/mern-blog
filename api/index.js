@@ -2,6 +2,7 @@ import express from 'express'; /* So we have changed "type" to module, in packag
 import mongoose from 'mongoose'; /* helps in easily interacting with mongoDB */
 import dotenv from 'dotenv'; /* So that we can use the .env file here in the backend */
 import userRoutes from './routes/user.route.js'
+import authRoutes from './routes/auth.route.js'
 
 dotenv.config(); /* To configure the .env file */
 
@@ -16,6 +17,8 @@ mongoose.connect(process.env.MONGO)
 
 const app = express()  /* Creating the application */
 
+app.use(express.json());  /* Allows us to use json at the backend i.e., see json in console */
+
 /* server listening at port number 3000 */
 
 app.listen(3000, () => {      
@@ -25,7 +28,8 @@ app.listen(3000, () => {
 });
 
 app.use('/api/user', userRoutes);  /* Not 'get' because 'get' already there in user.routes.js
-                                     The URL will be api/user/test because 'test' part is there in route 
+                                     The URL will be api/user/test because 'test' part is there in route */
+app.use('/api/auth', authRoutes);                                    
 
 /* Installing nodemon so that we do not need to restart server to see the changes 
 Since we have changed the "scripts" in package.json, so while deploying, we need to write node api/index.js, not nodemon.
