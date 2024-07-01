@@ -1,4 +1,4 @@
-import { Navbar, TextInput } from 'flowbite-react';
+import { Navbar, TextInput } from 'flowbite-react'; // flowbite-react: UI Components
 import { Button } from 'flowbite-react'; //BUTTONS WORKED AFTER CORRECT TAILWIND.CONFIG FILE!!
 import { Link, useLocation} from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
@@ -29,7 +29,7 @@ export default function Header() {
                 <FaMoon />
              </Button>
              <Link to='/sign-in'>
-               <Button className='w-15 h-10 sm:inline' gradientDuoTone='purpleToBlue' outline>
+               <Button className='w-15 h-10 sm:inline' gradientDuoTone='purpleToBlue'>
                  Sign In
                </Button>
              </Link>
