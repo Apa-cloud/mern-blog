@@ -27,9 +27,24 @@ app.listen(3000, () => {
 
 });
 
-app.use('/api/user', userRoutes);  /* Not 'get' because 'get' already there in user.routes.js
-                                     The URL will be api/user/test because 'test' part is there in route */
-app.use('/api/auth', authRoutes);                                    
+app.use('/api/user', userRoutes);  /* Not 'get' because 'get' already there in user.routes.js ;  The URL will be api/user/test because 'test' part is there in route */
+app.use('/api/auth', authRoutes);  
+
+
+
+/* Middleware (fn) to handle errors, so we don't have to write them individually again and again */
+
+app.use((err, req, res, next) => {  /* 'next' for going to next middleware */
+    const statusCode = err.statusCode || 500;  /* If there is no status code from 'err', then we'll have status code of 500 */
+    const message = err.message || 'Internal Server Error';  /* If no err.message, then we say Internal Serv. Err */
+    res.status(statusCode).json({
+        success: false,
+        statusCode,
+        message,
+    });
+});
+
+
 
 /* Installing nodemon so that we do not need to restart server to see the changes 
 Since we have changed the "scripts" in package.json, so while deploying, we need to write node api/index.js, not nodemon.
