@@ -4,6 +4,8 @@ import dotenv from 'dotenv'; /* So that we can use the .env file here in the bac
 import userRoutes from './routes/user.route.js'
 import authRoutes from './routes/auth.route.js'
 
+import path from 'path';
+
 dotenv.config(); /* To configure the .env file */
 
 
@@ -14,6 +16,8 @@ mongoose.connect(process.env.MONGO)
 }).catch(err => {
     console.log(err);
 });
+
+const __dirname = path.resolve();
 
 const app = express()  /* Creating the application */
 
@@ -30,7 +34,11 @@ app.listen(3000, () => {
 app.use('/api/user', userRoutes);  /* Not 'get' because 'get' already there in user.routes.js ;  The URL will be api/user/test because 'test' part is there in route */
 app.use('/api/auth', authRoutes);  
 
+app.use(express.static(path.join(__dirname, '/client/dist')));  // This will find this folder and run the index.html file
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
 
 /* Middleware (fn) to handle errors, so we don't have to write them individually again and again */
 
