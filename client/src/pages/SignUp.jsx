@@ -62,7 +62,7 @@ export default function SignUp() {
         Blog  
         </Link>
         <p className='text-sm mt-5'>    {/* Paragraph */}
-          Welcome to my blog!   You can sign up with your email and password or with Google. 
+          Welcome to my blog! You can sign up with your email and password or with Google. 
         </p>
       </div>
 
@@ -99,7 +99,7 @@ export default function SignUp() {
           {/* Already have account? option */}
          <div className='text-sm flex gap-2 mt-5'>
           <span>Already have an account?</span>
-          <Link to='/sign-in' className='text-green-700'>
+          <Link to='/sign-in' className='text-blue-500'>
           Sign In
           </Link>
          </div>
