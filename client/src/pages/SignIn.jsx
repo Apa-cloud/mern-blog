@@ -19,7 +19,7 @@ export default function SignIn() {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault();     //stops from refreshing
     if (!formData.email || !formData.password) {
       return dispatch(signInFailure('Please fill all the fields'));
     }
