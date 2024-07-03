@@ -3,6 +3,8 @@ import mongoose from 'mongoose'; /* helps in easily interacting with mongoDB */
 import dotenv from 'dotenv'; /* So that we can use the .env file here in the backend */
 import userRoutes from './routes/user.route.js'
 import authRoutes from './routes/auth.route.js'
+import cookieParser from 'cookie-parser';
+
 
 import path from 'path';
 
@@ -22,6 +24,7 @@ const __dirname = path.resolve();
 const app = express()  /* Creating the application */
 
 app.use(express.json());  /* Allows us to use json at the backend i.e., see json in console */
+app.use(cookieParser());
 
 /* server listening at port number 3000 */
 
