@@ -23,6 +23,10 @@ const userSchema = new mongoose.Schema({    /* Rules (datatypes and fields) to b
         type: String,
         default: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
       },
+      isAdmin: {
+        type: Boolean,
+        default: false,
+      },
     },
     { timestamps: true }  /* For storing time of creation and update  */
 );
