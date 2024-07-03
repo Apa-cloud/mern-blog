@@ -3,6 +3,7 @@ import mongoose from 'mongoose'; /* helps in easily interacting with mongoDB */
 import dotenv from 'dotenv'; /* So that we can use the .env file here in the backend */
 import userRoutes from './routes/user.route.js'
 import authRoutes from './routes/auth.route.js'
+import postRoutes from './routes/post.route.js';
 import cookieParser from 'cookie-parser';
 
 
@@ -36,6 +37,7 @@ app.listen(3000, () => {
 
 app.use('/api/user', userRoutes);  /* Not 'get' because 'get' already there in user.routes.js ;  The URL will be api/user/test because 'test' part is there in route */
 app.use('/api/auth', authRoutes);  
+app.use('/api/post', postRoutes);
 
 app.use(express.static(path.join(__dirname, '/client/dist')));  // This will find this folder and run the index.html file
 
