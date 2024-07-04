@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 // Everything will come under Routes and BrowserRouter now
 
 //all functions need to be imported from respective locations
+// 'moment' used to show time of creation of the user (? comment ?)
+
 import React from 'react'
 import SignUp from './pages/SignUp'
 import SignIn from './pages/SignIn'
