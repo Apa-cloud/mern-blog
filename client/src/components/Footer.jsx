@@ -1,6 +1,6 @@
 import { Footer } from 'flowbite-react';
 import { Link } from 'react-router-dom';
-import { BsFacebook, BsInstagram, BsTwitter, BsGithub, BsDribbble } from 'react-icons/bs';
+import { BsFacebook, BsInstagram, BsTwitter, BsGithub, BsLinkedin, BsDribbble } from 'react-icons/bs';
 export default function FooterCom() {
   return (
     <Footer container className='border border-t-8 border-teal-500'>
@@ -38,7 +38,7 @@ export default function FooterCom() {
               </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Title title='Follow us' />
+              <Footer.Title title='Follow me' />
               <Footer.LinkGroup col>
                 <Footer.Link
                   href='https://www.github.com/Apa-cloud'
@@ -47,16 +47,16 @@ export default function FooterCom() {
                 >
                   My Github
                 </Footer.Link>
-                <Footer.Link href='#'>Discord</Footer.Link>
+                {/* <Footer.Link href='#'>Discord</Footer.Link> */}
               </Footer.LinkGroup>
             </div>
-            <div>
+            {/* <div>
               <Footer.Title title='Legal' />
               <Footer.LinkGroup col>
                 <Footer.Link href='#'>Privacy Policy</Footer.Link>
                 <Footer.Link href='#'>Terms &amp; Conditions</Footer.Link>
               </Footer.LinkGroup>
-            </div>
+            </div> */}
           </div>
         </div>
         <Footer.Divider />
@@ -67,11 +67,12 @@ export default function FooterCom() {
             year={new Date().getFullYear()}
           />
           <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">
-            <Footer.Icon href='#' icon={BsFacebook}/>
+            {/* <Footer.Icon href='#' icon={BsFacebook}/>
             <Footer.Icon href='#' icon={BsInstagram}/>
-            <Footer.Icon href='#' icon={BsTwitter}/>
+            <Footer.Icon href='#' icon={BsTwitter}/> */}
             <Footer.Icon href='https://github.com/Apa-cloud' icon={BsGithub}/>
-            <Footer.Icon href='#' icon={BsDribbble}/>
+            <Footer.Icon href='https://www.linkedin.com/in/aparajita-sircar-789791282' icon={BsLinkedin}/>
+            {/* <Footer.Icon href='#' icon={BsDribbble}/> */}
 
           </div>
         </div>
